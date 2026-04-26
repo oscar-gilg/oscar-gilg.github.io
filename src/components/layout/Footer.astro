@@ -1,0 +1,11 @@
+---
+import { siteConfig } from "@/site.config";
+
+const year = new Date().getFullYear();
+---
+
+<footer
+	class="text-muted mt-auto flex w-full flex-col items-center justify-center gap-y-2 pt-20 pb-4 text-center text-xs sm:flex-row sm:justify-between"
+>
+	<div>&copy; {siteConfig.author} {year}</div>
+</footer>
