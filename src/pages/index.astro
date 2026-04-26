@@ -14,27 +14,33 @@ import PageLayout from "@/layouts/Base.astro";
 
 	<section class="mt-12">
 		<h2 class="title text-accent mb-4 text-xl">Research and writing</h2>
-		<ul class="space-y-3" role="list">
+		<ul class="list-disc space-y-2 ps-5" role="list">
 			<li>
-				<span class="font-semibold">Shared preference representations across personas.</span>
-				Forthcoming preprint, MATS 9.0 with Patrick Butlin. NeurIPS submission.
+				Personas use a shared preference vector. MATS 9.0 with Patrick Butlin (
+				<a
+					class="cactus-link"
+					href="https://www.lesswrong.com/posts/pxC2RAeoBrvK8ivMf/models-have-linear-representations-of-what-tasks-they-like-1"
+					rel="noreferrer"
+					target="_blank">post</a
+				>,
+				<a
+					class="cactus-link"
+					href="https://github.com/oscar-gilg/Preferences"
+					rel="noreferrer"
+					target="_blank">code</a
+				>; preprint forthcoming).
+			</li>
+			<li>
+				Split Persona Training. Trigger-conditioned persona fine-tuning. SPAR 2025, under review
+				at ICML 2026.
 			</li>
 			<li>
 				<a
 					class="cactus-link"
-					href="https://www.lesswrong.com/"
+					href="https://github.com/oscar-gilg/zombuul"
 					rel="noreferrer"
-					target="_blank">Models have linear representations of what tasks they like</a
-				>. Preliminary write-up from the same project (post link to be updated; code on GitHub).
-			</li>
-			<li>
-				<span class="font-semibold">Split Persona Training.</span>
-				SPAR 2025. Trigger-conditioned persona fine-tuning. Under review at ICML 2026 (avg review 4.5/6).
-			</li>
-			<li>
-				<a class="cactus-link" href="https://github.com/oscar-gilg/zombuul" rel="noreferrer"
-					>Zombuul</a
-				>. Claude Code plugin for launching autonomous research agents on GPU pods.
+					target="_blank">Zombuul</a
+				>. Claude Code plugin for autonomous research loops on GPU pods.
 			</li>
 		</ul>
 	</section>
@@ -42,16 +48,20 @@ import PageLayout from "@/layouts/Base.astro";
 	<section class="mt-12">
 		<h2 class="title text-accent mb-4 text-xl">CV</h2>
 		<p>
-			<a class="cactus-link" href="/cv.pdf">Download CV (PDF)</a>
+			<a class="cactus-link" href="/cv.pdf" rel="noreferrer" target="_blank">View CV (PDF)</a>
 		</p>
 	</section>
 
 	<section class="mt-12">
 		<h2 class="title text-accent mb-4 text-xl">Contact</h2>
-		<ul class="space-y-1" role="list">
-			<li>Email: <a class="cactus-link" href="mailto:oscar.gilg18@gmail.com">oscar.gilg18@gmail.com</a></li>
+		<ul class="list-disc space-y-1 ps-5" role="list">
 			<li>
-				GitHub: <a
+				Email: <span data-email-user="oscar.gilg18" data-email-domain="gmail.com"
+					>JavaScript required, or use the links below</span
+				>
+			</li>
+			<li>
+				<a
 					class="cactus-link"
 					href="https://github.com/oscar-gilg"
 					rel="noreferrer"
@@ -59,7 +69,7 @@ import PageLayout from "@/layouts/Base.astro";
 				>
 			</li>
 			<li>
-				LinkedIn: <a
+				<a
 					class="cactus-link"
 					href="https://www.linkedin.com/in/oscar-gilg"
 					rel="noreferrer"
@@ -68,4 +78,17 @@ import PageLayout from "@/layouts/Base.astro";
 			</li>
 		</ul>
 	</section>
+
+	<script is:inline>
+		document.querySelectorAll("[data-email-user]").forEach(function (el) {
+			var u = el.getAttribute("data-email-user");
+			var d = el.getAttribute("data-email-domain");
+			var addr = u + "@" + d;
+			var a = document.createElement("a");
+			a.href = "mai" + "lto:" + addr;
+			a.textContent = addr;
+			a.className = "cactus-link";
+			el.replaceWith(a);
+		});
+	</script>
 </PageLayout>
