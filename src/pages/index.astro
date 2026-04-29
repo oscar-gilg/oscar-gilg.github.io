@@ -1,46 +1,94 @@
 ---
+import { Image } from "astro:assets";
 import PageLayout from "@/layouts/Base.astro";
+import profile from "@/assets/profile.jpg";
 ---
 
 <PageLayout meta={{ title: "Oscar Gilg" }}>
-	<section class="space-y-6">
-		<h1 class="title">Oscar Gilg</h1>
-		<p class="leading-relaxed">
-			I work on AI welfare and persona representations at MATS 9.0, mentored by Patrick Butlin
-			(Eleos AI). Previously equity options at Optiver, philosophy of consciousness with François
-			Kammerer in Bochum, and Maths and CS at Oxford.
-		</p>
+	<section class="flex flex-col-reverse items-start gap-6 sm:flex-row sm:gap-8">
+		<div class="flex-1 space-y-4">
+			<h1 class="title">Oscar Gilg</h1>
+			<p class="leading-relaxed">
+				I work on empirical AI welfare research at MATS 9.0, mentored by
+				<a class="cactus-link" href="https://patrickbutlin.com/" rel="noreferrer" target="_blank"
+					>Patrick Butlin</a
+				>
+				(<a class="cactus-link" href="https://eleosai.org/" rel="noreferrer" target="_blank"
+					>Eleos AI</a
+				>).
+			</p>
+			<p class="text-muted">Previously:</p>
+			<ul class="list-disc space-y-1 ps-5" role="list">
+				<li>Equity options trader at Optiver.</li>
+				<li>
+					Theories of introspection with
+					<a
+						class="cactus-link"
+						href="https://www.francoiskammerer.com/"
+						rel="noreferrer"
+						target="_blank">François Kammerer</a
+					> at Ruhr-Universität Bochum.
+				</li>
+				<li>Maths and CS at Oxford.</li>
+			</ul>
+		</div>
+		<Image
+			alt="Oscar Gilg"
+			class="border-accent/30 aspect-square w-32 shrink-0 rounded-full border-2 object-cover shadow-sm sm:w-40"
+			loading="eager"
+			src={profile}
+			width={400}
+			widths={[160, 240, 320, 480]}
+		/>
 	</section>
 
 	<section class="mt-12">
-		<h2 class="title text-accent mb-4 text-xl">Research and writing</h2>
-		<ul class="list-disc space-y-2 ps-5" role="list">
+		<h2 class="title text-accent mb-4 text-xl">Projects</h2>
+		<ul class="space-y-4" role="list">
 			<li>
-				Personas use a shared preference vector. MATS 9.0 with Patrick Butlin (
-				<a
-					class="cactus-link"
-					href="https://www.lesswrong.com/posts/pxC2RAeoBrvK8ivMf/models-have-linear-representations-of-what-tasks-they-like-1"
-					rel="noreferrer"
-					target="_blank">post</a
-				>,
-				<a
-					class="cactus-link"
-					href="https://github.com/oscar-gilg/Preferences"
-					rel="noreferrer"
-					target="_blank">code</a
-				>; preprint forthcoming).
+				<div class="flex items-baseline justify-between gap-4">
+					<a
+						class="cactus-link font-semibold"
+						href="https://github.com/oscar-gilg/zombuul"
+						rel="noreferrer"
+						target="_blank">Zombuul</a
+					>
+					<span class="text-muted shrink-0 text-xs">2026</span>
+				</div>
+				<p class="text-muted mt-1">
+					I built a Claude Code plugin for launching autonomous research agents with access to
+					GPUs.
+				</p>
 			</li>
 			<li>
-				Split Persona Training. Trigger-conditioned persona fine-tuning. SPAR 2025, under review
-				at ICML 2026.
+				<div class="flex items-baseline justify-between gap-4">
+					<span class="font-semibold">Personas use a shared preference vector</span>
+					<span class="text-muted shrink-0 text-xs">MATS 9.0, 2026</span>
+				</div>
+				<p class="text-muted mt-1">
+					With Patrick Butlin (
+					<a
+						class="cactus-link"
+						href="https://www.lesswrong.com/posts/pxC2RAeoBrvK8ivMf/models-have-linear-representations-of-what-tasks-they-like-1"
+						rel="noreferrer"
+						target="_blank">post</a
+					>,
+					<a
+						class="cactus-link"
+						href="https://github.com/oscar-gilg/Preferences"
+						rel="noreferrer"
+						target="_blank">code</a
+					>; preprint forthcoming).
+				</p>
 			</li>
 			<li>
-				<a
-					class="cactus-link"
-					href="https://github.com/oscar-gilg/zombuul"
-					rel="noreferrer"
-					target="_blank">Zombuul</a
-				>. Claude Code plugin for autonomous research loops on GPU pods.
+				<div class="flex items-baseline justify-between gap-4">
+					<span class="font-semibold">Split Persona Training</span>
+					<span class="text-muted shrink-0 text-xs">SPAR 2025</span>
+				</div>
+				<p class="text-muted mt-1">
+					Trigger-conditioned persona fine-tuning. Under review at ICML 2026.
+				</p>
 			</li>
 		</ul>
 	</section>
@@ -56,8 +104,9 @@ import PageLayout from "@/layouts/Base.astro";
 		<h2 class="title text-accent mb-4 text-xl">Contact</h2>
 		<ul class="list-disc space-y-1 ps-5" role="list">
 			<li>
-				Email: <span data-email-user="oscar.gilg18" data-email-domain="gmail.com"
-					>JavaScript required, or use the links below</span
+				Email:
+				<span data-email-user="oscar.gilg18" data-email-domain="gmail.com"
+					>oscar.gilg18 [at] gmail [dot] com</span
 				>
 			</li>
 			<li>
