@@ -6,7 +6,7 @@ export const siteConfig: SiteConfig = {
 	title: "Oscar Gilg",
 	author: "Oscar Gilg",
 	description:
-		"Oscar Gilg. Researcher at MATS 9.0 working on AI welfare and persona representations. Previously equity options at Optiver, philosophy of consciousness at Ruhr-Universität Bochum, and Maths and CS at Oxford.",
+		"Oscar Gilg. Member of Technical Staff, Trajectory Labs, PBC. Working on AI for accelerating AI safety.",
 	lang: "en-GB",
 	ogLocale: "en_GB",
 	date: {

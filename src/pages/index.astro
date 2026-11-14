@@ -1,178 +1,122 @@
 ---
 import { Image } from "astro:assets";
-import PageLayout from "@/layouts/Base.astro";
+import { Icon } from "astro-icon/components";
 import profile from "@/assets/profile.jpg";
 ---
-
-<PageLayout meta={{ title: "Oscar Gilg" }}>
-	<section class="flex flex-col-reverse items-start gap-6 sm:flex-row sm:gap-8">
-		<div class="flex-1 space-y-4">
-			<h1 class="title">Oscar Gilg</h1>
-			<p class="leading-relaxed">
-				I work on empirical AI welfare research at MATS 9.0, mentored by
-				<a class="cactus-link" href="https://patrickbutlin.com/" rel="noreferrer" target="_blank"
-					>Patrick Butlin</a
-				>.
-			</p>
-		</div>
-		<Image
-			alt="Oscar Gilg"
-			class="border-accent/30 aspect-square w-32 shrink-0 rounded-full border-2 object-cover shadow-sm sm:w-40"
-			loading="eager"
-			src={profile}
-			width={400}
-			widths={[160, 240, 320, 480]}
-		/>
-	</section>
-
-	<section class="mt-12">
-		<h2 class="title text-accent mb-4 text-xl">Projects</h2>
-		<ul class="space-y-4" role="list">
-			<li>
-				<div class="flex items-baseline justify-between gap-4">
-					<a
-						class="cactus-link font-semibold"
-						href="https://arxiv.org/abs/2605.13339"
-						rel="noreferrer"
-						target="_blank">Probing Persona-Dependent Preferences in Language Models</a
-					>
-					<span class="text-muted shrink-0 text-xs">MATS 9.0, 2026</span>
-				</div>
-				<p class="text-muted mt-1">
-					With Patrick Butlin (
-					<a
-						class="cactus-link"
-						href="https://www.lesswrong.com/posts/pxC2RAeoBrvK8ivMf/models-have-linear-representations-of-what-tasks-they-like-1"
-						rel="noreferrer"
-						target="_blank">post</a
-					>,
-					<a
-						class="cactus-link"
-						href="https://github.com/oscar-gilg/Preferences"
-						rel="noreferrer"
-						target="_blank">code</a
-					>,
-					<a
-						class="cactus-link"
-						href="https://x.com/gilg_oscar/status/2056387363840893075"
-						rel="noreferrer"
-						target="_blank">thread</a
-					>).
-				</p>
-			</li>
-			<li>
-				<div class="flex items-baseline justify-between gap-4">
-					<a
-						class="cactus-link font-semibold"
-						href="https://arxiv.org/abs/2602.05532"
-						rel="noreferrer"
-						target="_blank">Split Personality Training</a
-					>
-					<span class="text-muted shrink-0 text-xs">SPAR 2025</span>
-				</div>
-				<p class="text-muted mt-1">
-					Trigger-conditioned persona fine-tuning. Accepted at ICML 2026.
-				</p>
-			</li>
-			<li>
-				<div class="flex items-baseline justify-between gap-4">
-					<a
-						class="cactus-link font-semibold"
-						href="https://github.com/oscar-gilg/zombuul"
-						rel="noreferrer"
-						target="_blank">Zombuul</a
-					>
-					<span class="text-muted shrink-0 text-xs">2026</span>
-				</div>
-				<p class="text-muted mt-1">
-					I built a Claude Code plugin for launching autonomous research agents with access to
-					GPUs.
-				</p>
-			</li>
-		</ul>
-	</section>
-
-	<section class="mt-12 space-y-4">
-		<h2 class="title text-accent mb-4 text-xl">Bio</h2>
-		<p class="leading-relaxed">
-			I studied Mathematics and Computer Science at Oxford, graduating in 2023 with a First-Class
-			degree and Master's Distinction. Reading Dennett's <em>Consciousness Explained</em> and
-			<em>From Bacteria to Bach and Back</em> got me interested in philosophy of mind, and in my
-			final-year dissertation I tried to operationalise properties of consciousness and described
-			how they could arise in a hierarchical generative model.
-		</p>
-		<p class="leading-relaxed">
-			After Oxford I spent two months in Bochum working with
-			<a
-				class="cactus-link"
-				href="https://www.francoiskammerer.com/"
-				rel="noreferrer"
-				target="_blank">François Kammerer</a
-			> on formalising illusionist theories of consciousness, then joined Optiver in Amsterdam as
-			a quantitative trader. I spent over a year on a 6-trader equities desk; trading taught me
-			to test hypotheses fast and make decisions under uncertainty.
-		</p>
-		<p class="leading-relaxed">
-			I had first read Bostrom's <em>Superintelligence</em> as a teenager and dismissed the
-			timelines as too aggressive. When o3 was released that intuition flipped: I left Optiver
-			and applied to MATS, where I now do empirical AI welfare research with six-month extension
-			funding.
-		</p>
-	</section>
-
-	<section class="mt-12">
-		<h2 class="title text-accent mb-4 text-xl">CV</h2>
-		<p>
-			<a class="cactus-link" href="/cv.pdf" rel="noreferrer" target="_blank">View CV (PDF)</a>
-		</p>
-	</section>
-
-	<section class="mt-12">
-		<h2 class="title text-accent mb-4 text-xl">Contact</h2>
-		<ul class="list-disc space-y-1 ps-5" role="list">
-			<li>
-				Email:
-				<span
-					class="cactus-link cursor-pointer"
-					data-eu="oscar.gilg18"
-					data-ed="gmail.com"
-					role="button"
-					tabindex="0">oscar.gilg18 [at] gmail [dot] com</span
-				>
-			</li>
-			<li>
-				<a
-					class="cactus-link"
-					href="https://github.com/oscar-gilg"
-					rel="noreferrer"
-					target="_blank">github.com/oscar-gilg</a
-				>
-			</li>
-			<li>
-				<a
-					class="cactus-link"
-					href="https://www.linkedin.com/in/oscar-gilg"
-					rel="noreferrer"
-					target="_blank">linkedin.com/in/oscar-gilg</a
-				>
-			</li>
-		</ul>
-	</section>
-
-	<script is:inline>
-		document.querySelectorAll("[data-eu]").forEach(function (el) {
-			function open() {
-				var u = el.getAttribute("data-eu");
-				var d = el.getAttribute("data-ed");
-				window.location.href = "mai" + "lto:" + u + "@" + d;
-			}
-			el.addEventListener("click", open);
-			el.addEventListener("keydown", function (e) {
-				if (e.key === "Enter" || e.key === " ") {
-					e.preventDefault();
-					open();
-				}
-			});
-		});
-	</script>
-</PageLayout>
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Oscar Gilg</title>
+<meta name="description" content="Oscar Gilg. Member of Technical Staff, Trajectory Labs, PBC. Working on AI for accelerating AI safety." />
+<link rel="canonical" href="https://oscar-gilg.github.io/" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<meta property="og:title" content="Oscar Gilg" />
+<meta property="og:description" content="Oscar Gilg. Member of Technical Staff, Trajectory Labs, PBC. Working on AI for accelerating AI safety." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://oscar-gilg.github.io/" />
+<meta property="og:image" content="https://oscar-gilg.github.io/social-card.png" />
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<main id="main">
+<header class="intro">
+<div class="intro-copy">
+<h1>Oscar Gilg</h1>
+<p>I work on accelerating beneficial capabilities for making AI go well, mainly through building good evals to measure these capabilities. </p>
+<p>I’m particularly excited about helping make AI better at philosophy, and conceptual alignment science. I also think we should make the most of AI labour in the near term for alignment auditing and AI incident investigations. And I’m also excited about making it easier for humans to oversee agents, for example by measuring honesty and how well they write. </p>
+</div>
+<div class="portrait-links">
+<Image src={profile} alt="Oscar Gilg" width={400} widths={[200, 320, 400, 640]} sizes="(max-width: 640px) 180px, 220px" loading="eager" class="portrait" />
+<nav aria-label="Profile links">
+<a href="/cv.docx" aria-label="CV (Word document)"><Icon name="mdi:file-document-outline" aria-hidden="true" />CV</a>
+<a href="https://www.linkedin.com/in/oscar-gilg"><Icon name="mdi:linkedin" aria-hidden="true" />LinkedIn</a>
+<a href="https://x.com/gilg_oscar"><Icon name="mdi:twitter" aria-hidden="true" />Twitter</a>
+</nav>
+</div>
+</header>
+<section aria-label="Research and writing">
+<p>Some papers/posts I like related to this:</p>
+<ul>
+<li><a href="https://arxiv.org/abs/2605.06390">Automated alignment is harder than you think</a></li>
+<li><a href="https://www.redwoodresearch.org/blog/a-basic-case-for-accelerating-conceptual">A basic case for accelerating conceptual reasoning capabilities</a></li>
+<li><a href="https://joecarlsmith.com/2025/03/14/ai-for-ai-safety/">AI for AI safety — Joe Carlsmith</a></li>
+<li><a href="https://vitalik.eth.limo/general/2025/01/05/dacc2.html">d/acc: one year later — Vitalik Buterin</a></li>
+</ul>
+<h2>Projects</h2>
+<div class="project-heading"><h3><a href="https://www.lesswrong.com/posts/WbmAqtfkrCqRHxAGh/commentbench-can-models-match-human-comments-on-ai-safety">CommentBench</a></h3><span class="date">September 2026</span></div>
+<ul>
+<li>We measure how well model-generated comments match human comments on conceptual AI-safety posts, drafts and shortforms. Models write comments, and we measure how many of the substantive human points they recover.</li>
+</ul>
+<div class="project-heading"><h3><a href="https://github.com/hamzah2304/messageboardauditbench">SlopvestigatorBench</a></h3><span class="date">September 2026</span></div>
+<ul>
+<li>Can an AI agent investigate raw logs of AI agents misbehaving and find what human investigators found? We turn three real incidents into benchmarks: agents get the logs, investigate under a time budget, and write reports that we score against human findings.</li>
+</ul>
+<p>Blog post: <a href="https://www.lesswrong.com/posts/wt4kk6vFPEhkXvF8Q/how-good-are-slop-vestigators">How good are slop-vestigators?</a></p>
+<div class="project-heading"><h3><a href="https://arxiv.org/abs/2605.13339">Probing Persona-Dependent Preferences in Language Models</a></h3><span class="date">May 2026</span></div>
+<p class="context">MATS 9.0 · Accepted at NeurIPS 2026</p>
+<ul>
+<li>We found a shared preference direction that predicts which tasks models choose across different personas. With Patrick Butlin (<a href="https://www.lesswrong.com/posts/pxC2RAeoBrvK8ivMf/models-have-linear-representations-of-what-tasks-they-like-1">post</a>, <a href="https://github.com/oscar-gilg/Preferences">code</a>, <a href="https://x.com/gilg_oscar/status/2056387363840893075">thread</a>).</li>
+</ul>
+<div class="project-heading"><h3><a href="https://arxiv.org/abs/2602.05532">Split Personality Training</a></h3><span class="date">February 2026</span></div>
+<p class="context">SPAR</p>
+<ul>
+<li>Trigger-conditioned persona fine-tuning. Accepted at ICML 2026.</li>
+</ul>
+<h2>Other work</h2>
+<div class="project-heading"><h3><a href="https://www.lesswrong.com/posts/4pgGkbwvdmxKPcJsM/bench-on-the-clocktower">Bench on the Clocktower</a></h3><span class="date">September 2026</span></div>
+<ul>
+<li>We turn Blood on the Clocktower into a multi-agent benchmark, and a testbed for deception and coordination capabilities. Agents sometimes coordinate sophisticated lies when playing Evil, but tend to fall for them when playing Good.</li>
+</ul>
+<div class="project-heading"><h3><a href="https://www.lesswrong.com/posts/ht8uMbAByDCKWHa9H/ai-welfare-research-needs-basic-science">AI welfare research needs basic science</a></h3><span class="date">July 2026</span></div>
+<ul>
+<li>We argue for iterative, bottom-up basic science in AI welfare research. Current theories were calibrated to humans and may not generalise to AI. Empirical work should help us refine those theories without presupposing which one is right.</li>
+</ul>
+<div class="project-heading"><h3><a href="https://www.lesswrong.com/posts/5gDjg4oN4kJKMLovs/ablating-split-personality-training">Ablating Split Personality Training</a></h3><span class="date">March 2026</span></div>
+<ul>
+<li>I ablated the key components of Split-Personality training to understand which parts actually matter.</li>
+</ul>
+</section>
+</main>
+<style>
+:global(*) { box-sizing: border-box; }
+:global(html) { background: #f8f6f1; color: #29332f; font: 16px/1.65 Arial, Helvetica, sans-serif; }
+:global(body) { margin: 0; }
+main { max-width: 920px; margin: 0 auto; padding: 64px 32px 80px; }
+a { color: #356c64; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { color: #224c45; }
+a:focus-visible { outline: 2px solid #356c64; outline-offset: 4px; }
+.intro { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 44px; align-items: start; margin-bottom: 32px; }
+h1 { margin: 0 0 24px; font-size: 40px; line-height: 1.15; font-weight: 600; letter-spacing: -1px; }
+p { margin: 12px 0; }
+.intro-copy p { margin: 0 0 18px; }
+.portrait-links { text-align: center; padding-top: 4px; }
+.portrait { width: 220px; height: 220px; object-fit: cover; border-radius: 50%; }
+nav { display: flex; justify-content: center; gap: 16px; margin-top: 16px; }
+nav a { display: inline-flex; align-items: center; gap: 5px; text-decoration: none; white-space: nowrap; }
+nav :global(svg) { width: 18px; height: 18px; }
+h2 { margin: 40px 0 22px; border-top: 1px solid #d9ddd4; padding-top: 14px; font-size: 1rem; font-weight: 600; }
+h3 { margin: 0; font-size: 1rem; font-weight: 600; }
+.project-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin-top: 26px; }
+.date { color: #626b62; white-space: nowrap; }
+.context { color: #626b62; margin: 4px 0 10px; }
+ul { margin: 12px 0 20px; padding-left: 24px; }
+li { padding-left: 2px; margin-bottom: 10px; }
+.skip { position: absolute; top: -60px; left: 16px; padding: 8px; background: #f8f6f1; }
+.skip:focus { top: 8px; }
+@media (max-width: 720px) {
+ main { padding: 40px 24px 60px; }
+ .intro { grid-template-columns: minmax(0, 1fr) 220px; gap: 24px; }
+ .portrait { width: 180px; height: 180px; }
+ nav { gap: 10px; }
+}
+@media (max-width: 600px) {
+ .intro { display: flex; flex-direction: column; gap: 12px; }
+ .portrait-links { align-self: center; }
+ h1 { font-size: 36px; }
+ .project-heading { flex-direction: column; gap: 2px; }
+}
+</style>
+</body>
+</html>
